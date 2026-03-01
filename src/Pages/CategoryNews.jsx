@@ -8,7 +8,7 @@ const CategoryNews = () => {
   return (
     <div>
       <h1> this is caregory news - {id}</h1>
-    </div>
+    </div> 
   );
 };
 

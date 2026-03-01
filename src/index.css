@@ -2,6 +2,10 @@
 /* Tailwind Css & daisy UI  */
 @import "tailwindcss";
 @plugin "daisyui";
+/* Global color -- */
+body {
+  background-color: #f3f4f6; /* light gray */
+}
 @keyframes marquee {
   0% {
     transform: translateX(100%);

@@ -17,7 +17,7 @@ const Home = () => {
         </header>
         <main
           className="max-w-7xl mx-auto w-11/12 my-8 
-                 grid grid-cols-1 md:grid-cols-12 gap-4 "
+                 grid grid-cols-1 md:grid-cols-12 gap-4  "
         >
           {/* Left Sidebar */}
           <aside className="md:col-span-3">

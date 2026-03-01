@@ -1,11 +1,12 @@
+import { format } from "date-fns";
+
 const Header = () => {
+  const today = format(new Date(), "EEEE, MMMM dd, yyyy");
   return (
     <header className="bg-white py-10 border-b border-gray-200">
-
       {/* Logo Image */}
       <div className="flex justify-center">
         <div className="relative group">
-
           {/* Soft Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 blur-2xl opacity-20 group-hover:opacity-40 transition duration-500 rounded-full"></div>
 
@@ -18,18 +19,15 @@ const Header = () => {
       </div>
 
       {/* Subtitle */}
-      <p className="text-center text-gray-500 mt-6 tracking-[0.3em] uppercase text-xs md:text-sm animate-fadeIn">
+      <p className="text-center text-gray-500 mt-6   text-xs md:text-sm animate-fadeIn">
         Journalism Without Fear or Favour
       </p>
 
       {/* Date */}
-      <p className="text-center text-gray-700 mt-3 font-medium text-sm">
-        Sunday, November 27, 2025
-      </p>
+      <p className="font-semibold text-center text-sm ">{today}</p>
 
       {/* Breaking News Bar */}
-      <div className="max-w-5xl mx-auto mt-8 flex items-center rounded-xl overflow-hidden shadow-md border border-gray-200">
-
+      <div className="max-w-5xl mx-auto  mt-8 flex items-center rounded-xl overflow-hidden shadow-md border border-gray-200">
         <span className="bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-3 font-semibold uppercase text-sm tracking-wide animate-pulse">
           Latest
         </span>
@@ -40,9 +38,7 @@ const Header = () => {
             &nbsp;&nbsp;&nbsp; ⚽ Match Highlights: Germany vs Spain as...
           </p>
         </div>
-
       </div>
-
     </header>
   );
 };

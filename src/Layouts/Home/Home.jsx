@@ -15,13 +15,16 @@ const Home = () => {
             <Navbar></Navbar>
           </nav>
         </header>
+
         <main
           className="max-w-7xl mx-auto w-11/12 my-8 
-                 grid grid-cols-1 md:grid-cols-12 gap-4  "
+               grid grid-cols-1 md:grid-cols-12 gap-4"
         >
           {/* Left Sidebar */}
           <aside className="md:col-span-3">
-            <HomeLayout />
+            <div className="sticky top-2 h-fit">
+              <HomeLayout />
+            </div>
           </aside>
 
           {/* Main Content */}
@@ -31,7 +34,9 @@ const Home = () => {
 
           {/* Right Sidebar */}
           <aside className="md:col-span-3">
-            <RightAsaide />
+            <div className="sticky top-2 h-fit">
+              <RightAsaide />
+            </div>
           </aside>
         </main>
       </div>

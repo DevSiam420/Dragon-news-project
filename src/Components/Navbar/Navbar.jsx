@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaUser, FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -37,7 +38,10 @@ const Navbar = () => {
           </div>
 
           {/* Login Button */}
-          <button className="relative px-8 py-3 font-semibold text-white bg-slate-900 rounded-full overflow-hidden group border border-slate-700 hover:border-cyan-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] active:scale-95">
+          <Link
+            to="/auth/login"
+            className="relative px-8 py-3 font-semibold text-white bg-slate-900 rounded-full overflow-hidden group border border-slate-700 hover:border-cyan-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] active:scale-95"
+          >
             <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
             <span className="absolute inset-[-2px] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm -z-10"></span>
             <span className="relative flex items-center gap-2">
@@ -57,7 +61,7 @@ const Navbar = () => {
                 />
               </svg>
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}

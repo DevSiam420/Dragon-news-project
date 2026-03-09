@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { Link } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
+
 
 const Login = () => {
+  const { LogIn } = useContext(AuthContext);
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    //  Call the LogIn Function ----
+    LogIn(email, password)
+      .then((result) => {
+        console.log(" user logged in successfully ", result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-10">
@@ -14,7 +35,7 @@ const Login = () => {
         <div className="divider my-6"></div>
 
         {/* Form */}
-        <form className="space-y-5">
+        <form onSubmit={handleLogIn} className="space-y-5">
           {/* Email */}
           <div>
             <label className="label">
@@ -30,8 +51,10 @@ const Login = () => {
 
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email address"
                 className="input input-bordered w-full pl-10 bg-gray-100"
+                required
               />
             </div>
           </div>
@@ -51,14 +74,19 @@ const Login = () => {
 
               <input
                 type="password"
+                name="password"
                 placeholder="Enter your password"
                 className="input input-bordered w-full pl-10 bg-gray-100"
+                required
               />
             </div>
           </div>
 
-          {/* Button */}
-          <button className="btn w-full bg-gray-800 text-white hover:bg-black border-none">
+          {/* Login Button */}
+          <button
+            type="submit"
+            className="btn w-full bg-gray-800 text-white hover:bg-black border-none"
+          >
             Login
           </button>
 
@@ -66,7 +94,7 @@ const Login = () => {
           <p className="text-center text-sm text-gray-600 pt-2">
             Don’t Have An Account ?
             <Link
-              to="/auth/Register"
+              to="/auth/register"
               className="text-red-500 font-semibold ml-1 underline"
             >
               Register

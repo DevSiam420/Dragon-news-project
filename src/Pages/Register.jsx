@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaUser, FaImage, FaEnvelope, FaLock } from "react-icons/fa";
 import { Link } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
+  const { createUser, setUser } = useContext(AuthContext);
+  const HandleRegister = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+    createUser(email, password)
+      .then((result) => {
+        setUser(result.user);
+        // console.log(result);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-10">
@@ -13,7 +30,7 @@ const Register = () => {
 
         <div className="divider my-6"></div>
 
-        <form className="space-y-5">
+        <form onSubmit={HandleRegister} className="space-y-5">
           {/* Name */}
           <div>
             <label className="label">
@@ -28,6 +45,7 @@ const Register = () => {
               </span>
 
               <input
+                name=" name"
                 type="text"
                 placeholder="Enter your name"
                 className="input input-bordered w-full pl-10 bg-gray-100"
@@ -70,6 +88,7 @@ const Register = () => {
               </span>
 
               <input
+                name="email"
                 type="email"
                 placeholder="Enter your email address"
                 className="input input-bordered w-full pl-10 bg-gray-100"
@@ -92,6 +111,7 @@ const Register = () => {
 
               <input
                 type="password"
+                name="password"
                 placeholder="Enter your password"
                 className="input input-bordered w-full pl-10 bg-gray-100"
               />
@@ -107,7 +127,10 @@ const Register = () => {
           </div>
 
           {/* Button */}
-          <button className="btn w-full bg-gray-800 text-white hover:bg-black border-none">
+          <button
+            type="submit"
+            className="btn w-full bg-gray-800 text-white hover:bg-black border-none"
+          >
             Register
           </button>
 

@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 const SocialLogin = () => {
   return (
     <div className="w-full max-w-sm mx-auto space-y-4 px-4">
-      <h2 className="text-black font-bold text-md text-center md:text-left">
+      <h2 className="text-black font-bold text-2xl text-center md:text-left">
         Login with
       </h2>
 

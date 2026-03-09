@@ -1,8 +1,17 @@
 import React from "react";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const { title, details, thumbnail_url, total_view, rating, author, others } =
-    news;
+  const {
+    id,
+    title,
+    details,
+    thumbnail_url,
+    total_view,
+    rating,
+    author,
+    others,
+  } = news;
 
   return (
     <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden mb-4 group">
@@ -68,7 +77,10 @@ const NewsCard = ({ news }) => {
           {details?.length > 200 ? details.slice(0, 200) + "..." : details}
         </p>
 
-        <button className="mt-3 inline-flex items-center gap-1.5 text-indigo-600 font-semibold text-sm hover:text-indigo-800 transition-all duration-300 group/btn">
+        <Link
+          to={`/news-details/${id}`}
+          className="mt-3 inline-flex items-center gap-1.5 text-indigo-600 font-semibold text-sm hover:text-indigo-800 transition-all duration-300 group/btn"
+        >
           Read More
           <svg
             className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
@@ -83,7 +95,7 @@ const NewsCard = ({ news }) => {
               d="M17 8l4 4m0 0l-4 4m4-4H3"
             />
           </svg>
-        </button>
+        </Link>
       </div>
 
       {/* Footer */}

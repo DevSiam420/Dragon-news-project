@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import Home from "../Layouts/Home/Home";
-import About from "../Layouts/About/About";
+
 import HomePage from "../Pages/HomePage";
 
 import CategoryNews from "../Pages/CategoryNews";
@@ -8,6 +8,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AuthenticationLayout from "../Layouts/AuthenticationLayout";
 import NewsDetails from "../Pages/NewsDetails";
+import PrivetRoute from "../Provider/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/news-details/:id",
-    element: <NewsDetails />,
+    element: (
+      <PrivetRoute>
+        <NewsDetails />
+      </PrivetRoute>
+    ),
     loader: () => fetch("/news.json"),
   },
 ]);

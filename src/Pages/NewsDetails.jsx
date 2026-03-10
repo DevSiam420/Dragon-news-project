@@ -41,7 +41,7 @@ const NewsDetails = () => {
       </header>
 
       {/* Main Section */}
-      <main className="mx-auto w-11/12 lg:w-10/12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <main className="mx-auto w-11/12 lg:w-11/12 grid grid-cols-1 lg:grid-cols-12 gap-3">
         {/* News */}
         <section className="lg:col-span-9 my-8 md:my-12 lg:my-20">
           <NewsDetailsCard news={news}></NewsDetailsCard>

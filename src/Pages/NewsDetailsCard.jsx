@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 
 const NewsDetailsCard = ({ news }) => {
   const { title, image_url, details, author } = news;
@@ -125,7 +126,8 @@ const NewsDetailsCard = ({ news }) => {
                           animate-[fadeUp_0.8s_ease-out_0.6s_both]"
           >
             {/* Back Button */}
-            <button
+            <Link
+              to={`/category/${news.category_id}`}
               className="group relative overflow-hidden bg-gradient-to-r from-red-500 
                                to-orange-500 text-white font-semibold px-7 py-3.5 rounded-2xl 
                                shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 
@@ -145,9 +147,9 @@ const NewsDetailsCard = ({ news }) => {
                 >
                   ←
                 </span>
-                All news in this category
+                Back to the category
               </span>
-            </button>
+            </Link>
 
             {/* Share Button */}
             <button

@@ -56,7 +56,7 @@ const Navbar = () => {
           {user ? (
             <Link
               onClick={handleLogout}
-              to="/auth/login"
+              to="/"
               className="relative px-8 py-3 font-semibold text-white bg-slate-900 rounded-full overflow-hidden group border border-slate-700 hover:border-cyan-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] active:scale-95"
             >
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
@@ -105,30 +105,7 @@ const Navbar = () => {
               </span>
             </Link>
           )}
-          {/* <Link
-            to="/auth/login"
-            className="relative px-8 py-3 font-semibold text-white bg-slate-900 rounded-full overflow-hidden group border border-slate-700 hover:border-cyan-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] active:scale-95"
-          >
-            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
-            <span className="absolute inset-[-2px] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm -z-10"></span>
-            <span className="relative flex items-center gap-2">
-              <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
-              Login
-              <svg
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </span>
-          </Link> */}
+        
         </div>
 
         {/* Mobile Toggle */}

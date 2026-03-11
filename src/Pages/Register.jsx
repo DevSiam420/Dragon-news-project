@@ -9,10 +9,9 @@ import {
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
-import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser, setUser } = useContext(AuthContext);
+  const { createUser, setUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
@@ -67,7 +66,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         // Firebase Profile Update
-        updateProfile(result.user, {
+        updateUser({
           displayName: name,
           photoURL: photo,
         })

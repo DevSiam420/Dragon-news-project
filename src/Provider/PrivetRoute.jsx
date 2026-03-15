@@ -5,7 +5,7 @@ import { Navigate, useLocation } from "react-router";
 const PrivetRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
-  console.log("Current user : ", user, location);
+  // console.log("Current user : ", user, location);
   //    LOADING STATE --
   if (loading) {
     return (

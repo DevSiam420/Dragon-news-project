@@ -26,11 +26,11 @@ const Login = () => {
 
     LogIn(email, password)
       .then((result) => {
-        console.log("User logged in successfully:", result.user);
+        // console.log("User logged in successfully:", result.user);
         navigate(from, { replace: true }); // ✅ replace prevents going back to login
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
         // ✅ User-friendly error messages
         switch (err.code) {
           case "auth/user-not-found":

@@ -375,6 +375,7 @@ const Navbar = () => {
         </div>
       </div>
 
+
       {/* Animation keyframe */}
       <style>{`
         @keyframes dropIn {

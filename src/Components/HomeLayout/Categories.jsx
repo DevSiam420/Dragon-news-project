@@ -6,7 +6,7 @@ const categoriedPromis = fetch("/public/categories.json").then((response) =>
 );
 
 const Categories = () => {
-  console.log(categoriedPromis);
+  // console.log(categoriedPromis);
 
   const category = use(categoriedPromis);
   return (

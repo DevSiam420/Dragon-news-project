@@ -85,11 +85,11 @@ const Register = () => {
           })
           .catch((err) => {
             setError("Failed to update profile.");
-            console.error(err);
+            // console.error(err);
           });
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
         switch (err.code) {
           case "auth/email-already-in-use":
             setError("An account with this email already exists.");
